@@ -41,16 +41,21 @@ public class ProductServiceTest {
 		
 	}
 	
-	//@Test
+	@Test
 	public void testGetProduct() throws Exception {
+		
 		Product product = new Product();
-		
-		
-		productService.getProduct(10001);
+		product = productService.getProduct(10001);
+		System.out.println(productService.getProduct(10001));
 		System.out.println(product.toString());
+		
+		Assert.assertEquals(10001,product.getProdNo());
+		
+		Assert.assertNotNull(product);
+	
 	}
 	
-	@Test
+	//@Test
 	public void testGetProductList() throws Exception{
 		Search search = new Search();
 		search.setCurrentPage(1);
